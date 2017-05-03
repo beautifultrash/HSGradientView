@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16D30a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="HSGradientView" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UHJ-I4-UcX" customClass="GradientView" customModule="DrawEdgeView" customModuleProvider="target">
+                                <rect key="frame" x="65" y="211" width="245" height="245"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z0w-bb-nmV">
+                                        <rect key="frame" x="-0.5" y="-0.5" width="245" height="245"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <state key="normal">
+                                            <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="respondsToChangeColorWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="T2j-7V-slU"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="z0w-bb-nmV" firstAttribute="height" secondItem="UHJ-I4-UcX" secondAttribute="height" id="33P-M6-M7t"/>
+                                    <constraint firstItem="z0w-bb-nmV" firstAttribute="width" secondItem="UHJ-I4-UcX" secondAttribute="width" id="Hk5-Qi-39d"/>
+                                    <constraint firstAttribute="width" constant="245" id="Uaw-0G-NIn"/>
+                                    <constraint firstItem="z0w-bb-nmV" firstAttribute="centerY" secondItem="UHJ-I4-UcX" secondAttribute="centerY" id="fOt-vA-PH5"/>
+                                    <constraint firstAttribute="width" secondItem="UHJ-I4-UcX" secondAttribute="height" multiplier="1:1" id="rbj-8b-H6R"/>
+                                    <constraint firstItem="z0w-bb-nmV" firstAttribute="centerX" secondItem="UHJ-I4-UcX" secondAttribute="centerX" id="xV4-zl-cpI"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="beginColor">
+                                        <color key="value" red="0.1647058824" green="0.75686274509999996" blue="0.73725490199999999" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="endColor">
+                                        <color key="value" red="0.94901960780000005" green="0.31372549020000001" blue="0.31372549020000001" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="point" keyPath="startPoint">
+                                        <point key="value" x="-10" y="-10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="point" keyPath="endPoint">
+                                        <point key="value" x="1" y="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="startColor">
+                                        <color key="value" red="0.1647058824" green="0.75686274509999996" blue="0.73725490199999999" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="UHJ-I4-UcX" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="ObV-66-RlM"/>
+                            <constraint firstItem="UHJ-I4-UcX" firstAttribute="width" secondItem="UHJ-I4-UcX" secondAttribute="height" multiplier="1:1" id="e0y-hP-ghG"/>
+                            <constraint firstItem="UHJ-I4-UcX" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="hKx-eb-KeV"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="gradationView" destination="UHJ-I4-UcX" id="lpe-iz-GG5"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+</document>
