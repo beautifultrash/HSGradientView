@@ -50,32 +50,17 @@ class GradientView: UIView {
         animationEndPoint = loadPointAnimation(keyframeAnimation: animationEndPoint,
                                                pointValues: [CGPoint(x: 0.0, y: 0.0),
                                                              CGPoint(x: 2.0, y: 2.0)], duration: duration)
-        
+
         gradientLayer.add(animationStartPoint, forKey: "startPoint")
         gradientLayer.add(animationEndPoint, forKey: "endPoint")
         revertDirection = isRevert
-        
-//        if isRevert == true {
-//            let view = UIView.init(frame: self.bounds)
-//            view.backgroundColor = endColor
-//            gradientLayer.addSublayer(view.layer)
-////            gradientLayer.colors = [startColor.cgColor, endColor.cgColor]
-//            
-//        } else {
-//            let view = UIView.init(frame: self.bounds)
-//            view.backgroundColor = startColor
-//            gradientLayer.addSublayer(view.layer)
-////            gradientLayer.colors = [endColor.cgColor, startColor.cgColor]
-//            
-//        }
-
     }
     
     func loadPointAnimation(keyframeAnimation: CAKeyframeAnimation, pointValues: [CGPoint], duration: CFTimeInterval) -> CAKeyframeAnimation {
         
         keyframeAnimation.values = pointValues
         keyframeAnimation.isRemovedOnCompletion = false
-        keyframeAnimation.fillMode = kCAFillModeForwards;
+        keyframeAnimation.fillMode = kCAFillModeForwards
         keyframeAnimation.duration = duration
         keyframeAnimation.delegate = self
         
@@ -84,10 +69,29 @@ class GradientView: UIView {
 }
 
 extension GradientView: CAAnimationDelegate {
+    
     func animationDidStart(_ anim: CAAnimation) {
+        
+        if revertDirection == true {
+            gradientLayer.colors = [startColor.cgColor, endColor.cgColor]
+        } else {
+            gradientLayer.colors = [endColor.cgColor, startColor.cgColor]
+        }
+        
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.05) {
+            self.gradientLayer.isHidden = false
+        }
     }
     
     func animationDidStop(_ anim: CAAnimation, finished flag: Bool) {
         
+        if revertDirection == true {
+            self.backgroundColor = startColor
+        } else {
+            self.backgroundColor = endColor
+        }
+        
+        gradientLayer.isHidden = true
+
     }
 }
