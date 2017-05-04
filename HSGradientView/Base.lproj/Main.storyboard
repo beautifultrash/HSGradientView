@@ -7,6 +7,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -22,6 +23,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hZH-kk-Dih">
+                                <rect key="frame" x="-0.5" y="-0.5" width="375" height="667"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UHJ-I4-UcX" customClass="GradientView" customModule="HSGradientView" customModuleProvider="target">
                                 <rect key="frame" x="65" y="211" width="245" height="245"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -55,21 +60,77 @@
                                     <action selector="respondsToChangeColorWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="T2j-7V-slU"/>
                                 </connections>
                             </button>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qbE-Ba-iLY">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="J1S-2j-YUX" customClass="HSBColorPicker" customModule="HSGradientView" customModuleProvider="target">
+                                        <rect key="frame" x="65" y="211" width="245" height="245"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wFn-VL-6Vu">
+                                        <rect key="frame" x="65" y="211" width="245" height="245"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rdv-9B-CxA">
+                                                <rect key="frame" x="100.5" y="100.5" width="44" height="44"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                                <state key="normal">
+                                                    <color key="titleColor" red="0.33860913212435229" green="0.33860913212435229" blue="0.33860913212435229" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LhW-Y0-K3Z">
+                                                <rect key="frame" x="100.5" y="100.5" width="44" height="44"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                                <state key="normal">
+                                                    <color key="titleColor" red="0.33860913209999999" green="0.33860913209999999" blue="0.33860913209999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="wFn-VL-6Vu" firstAttribute="centerX" secondItem="J1S-2j-YUX" secondAttribute="centerX" id="7DA-ZD-k5t"/>
+                                    <constraint firstItem="wFn-VL-6Vu" firstAttribute="width" secondItem="J1S-2j-YUX" secondAttribute="width" id="YCT-tb-v8R"/>
+                                    <constraint firstItem="wFn-VL-6Vu" firstAttribute="height" secondItem="J1S-2j-YUX" secondAttribute="height" id="q4c-Ib-bcy"/>
+                                    <constraint firstItem="wFn-VL-6Vu" firstAttribute="centerY" secondItem="J1S-2j-YUX" secondAttribute="centerY" id="u6o-xu-rnF"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="hZH-kk-Dih" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="50J-KO-gML"/>
+                            <constraint firstItem="qbE-Ba-iLY" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="Adr-Wh-6JZ"/>
+                            <constraint firstItem="J1S-2j-YUX" firstAttribute="centerY" secondItem="UHJ-I4-UcX" secondAttribute="centerY" id="Eyt-xF-w8G"/>
+                            <constraint firstItem="qbE-Ba-iLY" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="GJD-2g-vY1"/>
+                            <constraint firstItem="hZH-kk-Dih" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Ndk-1i-YtO"/>
                             <constraint firstItem="UHJ-I4-UcX" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="ObV-66-RlM"/>
+                            <constraint firstItem="J1S-2j-YUX" firstAttribute="height" secondItem="UHJ-I4-UcX" secondAttribute="height" id="Sz6-7q-8Cd"/>
+                            <constraint firstItem="qbE-Ba-iLY" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="Vc9-pa-1MZ"/>
                             <constraint firstItem="UHJ-I4-UcX" firstAttribute="width" secondItem="UHJ-I4-UcX" secondAttribute="height" multiplier="1:1" id="e0y-hP-ghG"/>
+                            <constraint firstItem="hZH-kk-Dih" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="hCj-sZ-NSr"/>
                             <constraint firstItem="UHJ-I4-UcX" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="hKx-eb-KeV"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="qbE-Ba-iLY" secondAttribute="bottom" id="i5T-Zv-YUU"/>
+                            <constraint firstItem="J1S-2j-YUX" firstAttribute="centerX" secondItem="UHJ-I4-UcX" secondAttribute="centerX" id="o9o-wU-xga"/>
+                            <constraint firstItem="hZH-kk-Dih" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="vKH-lq-5xR"/>
+                            <constraint firstItem="J1S-2j-YUX" firstAttribute="width" secondItem="UHJ-I4-UcX" secondAttribute="width" id="xSI-Yx-rp4"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="bgView" destination="hZH-kk-Dih" id="X1u-7J-wd4"/>
                         <outlet property="changeButton" destination="z0w-bb-nmV" id="yFf-Ue-InN"/>
+                        <outlet property="colorPicker" destination="J1S-2j-YUX" id="5EM-Ay-mct"/>
+                        <outlet property="colorPickerView" destination="qbE-Ba-iLY" id="Gob-Wk-l5f"/>
                         <outlet property="gradationView" destination="UHJ-I4-UcX" id="lpe-iz-GG5"/>
+                        <outlet property="pickEndColorButton" destination="LhW-Y0-K3Z" id="GbD-md-F7Q"/>
+                        <outlet property="pickStartColorButton" destination="rdv-9B-CxA" id="bOV-7j-eL6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="138.98050974512745"/>
         </scene>
     </scenes>
 </document>

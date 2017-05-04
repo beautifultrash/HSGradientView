@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E47F26AD1EBAF2AB002E3ED7 /* ColorPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47F26AC1EBAF2AB002E3ED7 /* ColorPicker.swift */; };
 		E4D2236D1EBA224F00907941 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D2236C1EBA224F00907941 /* AppDelegate.swift */; };
 		E4D2236F1EBA224F00907941 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D2236E1EBA224F00907941 /* ViewController.swift */; };
 		E4D223721EBA224F00907941 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4D223701EBA224F00907941 /* Main.storyboard */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E47F26AC1EBAF2AB002E3ED7 /* ColorPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorPicker.swift; sourceTree = "<group>"; };
 		E4D223691EBA224F00907941 /* HSGradientView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HSGradientView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4D2236C1EBA224F00907941 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E4D2236E1EBA224F00907941 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -60,6 +62,7 @@
 				E4D2236C1EBA224F00907941 /* AppDelegate.swift */,
 				E4D2236E1EBA224F00907941 /* ViewController.swift */,
 				E4D223701EBA224F00907941 /* Main.storyboard */,
+				E47F26AC1EBAF2AB002E3ED7 /* ColorPicker.swift */,
 				E4D223731EBA224F00907941 /* Assets.xcassets */,
 				E4D223751EBA224F00907941 /* LaunchScreen.storyboard */,
 				E4D223781EBA224F00907941 /* Info.plist */,
@@ -141,6 +144,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E4D2236F1EBA224F00907941 /* ViewController.swift in Sources */,
+				E47F26AD1EBAF2AB002E3ED7 /* ColorPicker.swift in Sources */,
 				E4D2236D1EBA224F00907941 /* AppDelegate.swift in Sources */,
 				E4D2237F1EBA226700907941 /* GradientView.swift in Sources */,
 			);
@@ -267,11 +271,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = V7Q7YJJ647;
 				INFOPLIST_FILE = HSGradientView/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.gradimma.HSGradientView;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -280,11 +287,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = V7Q7YJJ647;
 				INFOPLIST_FILE = HSGradientView/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.gradimma.HSGradientView;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
@@ -308,6 +318,7 @@
 				E4D2237D1EBA224F00907941 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

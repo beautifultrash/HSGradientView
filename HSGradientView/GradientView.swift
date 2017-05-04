@@ -66,6 +66,14 @@ class GradientView: UIView {
         
         return keyframeAnimation
     }
+    
+    func updateGradientColor() {
+        if revertDirection == true {
+            self.backgroundColor = startColor
+        } else {
+            self.backgroundColor = endColor
+        }
+    }
 }
 
 extension GradientView: CAAnimationDelegate {
@@ -85,12 +93,7 @@ extension GradientView: CAAnimationDelegate {
     
     func animationDidStop(_ anim: CAAnimation, finished flag: Bool) {
         
-        if revertDirection == true {
-            self.backgroundColor = startColor
-        } else {
-            self.backgroundColor = endColor
-        }
-        
+        updateGradientColor()
         gradientLayer.isHidden = true
 
     }
